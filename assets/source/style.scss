@@ -1,0 +1,733 @@
+// MD Arif Islam
+
+// ========================= SASS Variables====================
+
+
+$primary-color:#f9556d;
+$secondary-color:#01358d;
+$text-color:#444;
+$box-shadow: 5px 13px 13px 5px rgba(249, 85, 109, 0.2);
+$hover-box-shadow:0px 13px 13px 0px rgba(249, 85, 109, 0.4);
+$background-color: #fee6e9;
+$background-color2: #f4f4f4;
+$background-color3: #fef2f4;
+$font:"Raleway",
+sans-serif;
+
+// ========================= Basic CSS====================
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: initial;
+}
+
+html {
+    font-size: 62.5%;
+    // This made 1rem = 10px
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
+body {
+    font-family: $font;
+    font-weight: 400;
+    line-height: 1.5;
+    box-sizing: border-box;
+    color: $text-color;
+}
+
+section {
+    padding: 4rem 2rem;
+}
+
+// ========================= Global CSS====================
+a {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.section_title {
+    font: normal 600 30px/45px $font;
+    color: $secondary-color;
+    border-bottom: 3px solid $primary-color;
+    width: 60px;
+}
+
+.section_desc {
+    font: normal 400 16px/25px $font;
+    color: $text-color;
+    padding-top: 20px;
+}
+
+.button {
+    margin-top: 3rem;
+    font: normal 500 14px/15px $font;
+    color: #fff;
+    background: $primary-color;
+    padding: 1.5rem 2.5rem;
+    border-radius: 3rem;
+    transition: .4s ease;
+    display: inline-block;
+    box-shadow: $box-shadow;
+    outline: none;
+    border: none;
+
+    &:hover {
+        background-color: #fa7589;
+        transition: .3s;
+    }
+
+    &:focus {
+        outline: none;
+        border: none;
+    }
+
+}
+
+// mobile-nav-toggle
+.mobile-nav-toggle {
+    position: fixed;
+    right: 1.5rem;
+    top: 1.5rem;
+    z-index: 9998;
+    border: 0;
+    background: none;
+    font-size: 3rem;
+    transition: all 0.4s;
+    outline: none !important;
+    line-height: 1;
+    cursor: pointer;
+    text-align: right;
+
+
+    i {
+        color: $primary-color;
+    }
+}
+
+// ========================================================== Header ===========================================
+.header {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 300px;
+    background-color: #040B14;
+    transition: all 0.5s;
+    padding: 0 15px;
+    z-index: 9997;
+
+
+    &_profile {
+        padding: 5px;
+
+        img {
+            margin: 15px auto;
+            display: block;
+            width: 120px;
+            border: 8px solid #2c2f3f;
+        }
+
+        h1 {
+            color: #fff;
+            font: normal bold 20px/25px $font;
+        }
+
+        &_icon {
+            padding: 5px;
+
+            i {
+                background-color: #2c2f3f;
+                width: 3.3rem;
+                height: 3.3rem;
+                color: #fff;
+                text-align: center;
+                border-radius: 50%;
+                line-height: 3.3rem;
+                font-size: 1.8rem;
+                margin: 0 4px;
+
+                &:hover {
+                    background-color: $primary-color;
+                    transition: .3s;
+                }
+
+            }
+        }
+    }
+
+    &_nav {
+        ul {
+            list-style: none;
+            padding: 3rem 2rem;
+
+            li {
+                padding: 1.5rem 0;
+
+                a {
+                    i {
+                        font-size: 1.5rem;
+                        text-align: center;
+                        margin-right: 10px;
+                        color: #a8a9b4;
+                    }
+
+                    span {
+                        font: normal 500 16px/20px $font;
+                        color: #a8a9b4;
+                    }
+
+                    &:hover,
+                    &.active {
+                        i {
+                            color: $primary-color;
+                            transition: .2s;
+                        }
+
+                        span {
+                            color: #fff;
+                            transition: .4s;
+                        }
+                    }
+                }
+
+
+            }
+        }
+    }
+}
+
+
+// ====================================================== Main ===================================================
+.main {
+    margin-left: 300px;
+    z-index: -9999;
+
+    // ------------------------------ Hero ------------------
+    .hero {
+
+        background: linear-gradient(rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.6)), url(../img/hero-bg.jpg);
+        background-size: cover;
+        background-position: top right;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        height: 100vh;
+        width: 100%;
+        position: relative;
+
+        &_content {
+            position: absolute;
+            top: 40%;
+            left: 20%;
+
+            h1 {
+                font: normal bold 60px /70px $font;
+                color: #fff;
+            }
+
+            h6 {
+                font: normal bold 30px /40px $font;
+                color: #fff;
+
+
+                span {
+                    padding-bottom: 3px;
+                    border-bottom: 3px solid $primary-color;
+
+                }
+            }
+        }
+    }
+
+    // ------------------------------ About ------------------
+
+    .about {
+        &_content {
+            padding: 1.5rem 0 3rem 0;
+
+            &_img {
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+
+            &_text {
+                padding-top: 2rem;
+
+                h1 {
+                    font: normal bold 25px/35px $font;
+                    color: $secondary-color;
+                }
+
+                p {
+                    font: normal 500 16px/20px $font;
+                    color: $text-color;
+                    font-style: italic;
+                }
+
+                ul {
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+
+                    h4 {
+                        font: normal 500 16px/25px $font;
+                        color: #000012eb;
+
+                        i {
+                            color: $primary-color;
+                            font-size: 1.5rem;
+                            padding: 0 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+
+// ------------------------------ Fact ------------------
+
+.fact {
+    &_content {
+        padding: 2rem;
+
+        i {
+            font-size: 5rem;
+            color: $primary-color;
+            text-align: center;
+            padding: 0 15px;
+        }
+
+        span {
+            font: normal bold 45px/60px $font;
+            color: #000012eb;
+        }
+
+        p {
+            font: normal bold 16px/25px $font;
+            color: $secondary-color;
+        }
+    }
+}
+
+
+
+// ------------------------------ Skill ------------------
+
+.skill {
+    &_content {
+        padding: 4rem 0 3rem 0;
+
+        &_progress {
+            padding: .7rem;
+
+            b {
+                font: normal 600 12px/20px $font;
+                color: #000012eb;
+                text-transform: uppercase;
+            }
+
+            span {
+                font: normal 600 12px/20px $font;
+                color: #000012eb;
+                float: right;
+            }
+
+            &_ber {
+                height: 10px;
+                background-color: #f3c5ca;
+
+                &_ber {
+                    height: 10px;
+                    background-color: $primary-color;
+                }
+            }
+        }
+    }
+}
+
+
+// ------------------------------ Portfolio ------------------
+
+.portfolio {
+    background-color: #f7eff0;
+
+    &_buttons {
+        padding: 4rem 0 3rem 0;
+
+        ul {
+            padding: 2rem;
+            background: #fff;
+            display: inline-block;
+            border-radius: 15px;
+            list-style: none;
+
+            li {
+                padding: 0 1rem;
+                font: normal 800 12px/20px $font;
+                color: #000012eb;
+                display: inline-block;
+                cursor: pointer;
+            }
+
+            li.active,
+            li:hover {
+                color: $primary-color;
+                transition: .3s;
+            }
+        }
+    }
+
+    &_item {
+        padding: 20px 5px 30px 5px;
+
+        &_wrap {
+            position: relative;
+
+            &_media {
+                position: relative;
+
+                img {
+                    position: relative;
+                    width: 100%;
+                    height: auto;
+                }
+            }
+
+            &_link {
+                position: absolute;
+                background-color: $primary-color;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                height: 0;
+                transition: height .4s ease;
+
+                i {
+                    font-size: 1.5rem;
+                    color: #fff;
+                    line-height: 2rem;
+                    padding: 13px 50% 10px 50%;
+                    display: none;
+                }
+            }
+
+            &:hover {
+                .portfolio_item_wrap_link {
+                    height: 20%;
+                    transition: height .4s ease;
+                    z-index: 1;
+                }
+
+                img {
+                    filter: brightness(1.2);
+                    transition: .5s;
+                }
+
+                i {
+                    display: block;
+                }
+            }
+        }
+
+
+    }
+}
+
+// ------------------------------ Services ------------------
+
+.services {
+    &_content {
+        padding: 2rem 1rem 1rem 1rem;
+        transition: .4s;
+
+        &_icon {
+            float: left;
+            display: flex;
+
+            i {
+                width: 5rem;
+                height: 5rem;
+                line-height: 5rem;
+                background: $primary-color;
+                text-align: center;
+                border-radius: 50%;
+                cursor: pointer;
+                font-size: 1.5rem;
+                color: #fff;
+                transition: .5s;
+                border: 1px solid $primary-color;
+
+                &:hover {
+                    background: #fff;
+                    color: $primary-color;
+                    transition: .5s;
+                }
+            }
+        }
+
+        &_text {
+            margin-left: 6rem;
+
+            h3 {
+                font: normal 700 20px/25px $font;
+                color: #040B14;
+            }
+
+            p {
+                font: normal 400 12px/18px $font;
+                color: $text-color;
+            }
+        }
+
+        .col-lg-4:hover {
+            box-shadow: $box-shadow;
+            transition: .4s;
+        }
+    }
+}
+
+
+// ------------------------------ Testimonial ------------------
+
+.testimonial {
+    background-color: #f7eff0;
+
+    &_carousel {
+        padding: 2rem;
+
+        &_item {
+            box-sizing: content-box;
+            text-align: center;
+            min-height: 320px;
+
+            p {
+                font-style: italic;
+                margin: 0 15px 15px 15px;
+                padding: 20px;
+                background-color: #fff;
+                position: relative;
+                margin-bottom: 35px;
+                background-origin: 6px;
+                box-shadow: $box-shadow;
+                font: normal 400 16px/25px $font;
+
+                &::after {
+                    content: "";
+                    width: 0;
+                    height: 0;
+                    border-top: 20px solid #fff;
+                    border-right: 20px solid transparent;
+                    border-left: 20px solid transparent;
+                    position: absolute;
+                    bottom: -20px;
+                    left: calc(50% - 20px);
+                }
+            }
+
+            img {
+                width: 90px !important;
+                border-radius: 50%;
+                margin: 0 auto;
+            }
+
+            h4 {
+                font: normal 700 16px/25px $font;
+                color: #040B14;
+            }
+
+            h3 {
+                font: normal 500 14px/15px $font;
+                color: $text-color;
+            }
+        }
+
+        .owl-dots {
+            margin-top: 10px;
+            text-align: center;
+
+            button {
+                display: inline-block;
+                margin: 0 5px;
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background-color: #ddd !important;
+
+                &:focus {
+                    outline: none;
+                    border: 0;
+                }
+            }
+
+            .active {
+                background-color: $primary-color !important;
+            }
+        }
+
+
+
+    }
+}
+
+
+// ------------------------------ Contect ------------------
+
+.contact {
+    &_info {
+        margin: 1rem;
+        width: 100%;
+        padding: 2rem;
+        box-shadow: $box-shadow;
+
+        &_item {
+            padding: 1rem 0;
+
+            i {
+                font-size: 2rem;
+                color: $primary-color;
+                float: left;
+                width: 4.4rem;
+                height: 4.4rem;
+                background: #fae5e8;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50px;
+                transition: all 0.3s ease-in-out;
+                cursor: pointer;
+
+                &:hover {
+                    background: $primary-color;
+                    color: #fff;
+                    transition: .3s;
+                }
+            }
+
+            h4 {
+                padding: 0 0 0 60px;
+                font: normal 700 16px/20px $font;
+            }
+
+            p {
+                padding: 0 0 10px 60px;
+                font: normal 400 12px/20px $font;
+                color: #040B14;
+            }
+        }
+
+    }
+
+    &_form {
+        width: 100%;
+        margin: 1rem;
+        padding: 2rem;
+        box-shadow: $box-shadow;
+
+        label {
+            font: normal 500 16px/20px $font;
+            color: #040B14;
+        }
+
+        input,
+        textarea {
+            position: relative;
+            width: 100%;
+            margin: 0 0 20px;
+            padding: 12px 26px;
+            font-family: $font;
+            font-size: 17px;
+            font-weight: 400;
+            line-height: 20px;
+            color: $secondary-color !important;
+            background-color: #fffff1;
+            border: 1px solid transparent;
+            box-shadow: inset 3px 5px 5px 0 rgba(0, 0, 0, .1);
+            border-radius: 15px;
+            box-sizing: border-box;
+            transition: border-color .3s ease-in-out;
+
+            &:focus {
+                border: 1px solid $primary-color;
+                color: $primary-color;
+                background-color: #f4f4f4;
+                box-shadow: inset 3px 5px 5px 0 rgba(0, 0, 0, .1);
+                border-radius: 15px;
+            }
+        }
+
+
+
+    }
+}
+
+
+// ====================================================== Footer ===================================================
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 300px;
+    background-color: #040B14;
+    transition: left 0.5s;
+    padding: 0 15px;
+    z-index: 9999;
+
+    h5 {
+        font: normal 500 14px/20px $font;
+        color: #fff;
+
+        span {
+            font-weight: 600;
+        }
+    }
+
+    p {
+        font: normal 500 12px/16px $font;
+        color: #fff;
+
+        span {
+            color: $primary-color;
+            font-weight: 600;
+        }
+    }
+}
+
+// Back to top Button
+
+.back-to-top {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    z-index: 99999;
+
+    i {
+        width: 4rem;
+        height: 4rem;
+        line-height: 4rem;
+        font-size: 1.5rem;
+        text-align: center;
+        border-radius: 50%;
+        color: #fff;
+        background-color: $primary-color;
+        transition: display 0.5s ease-in-out;
+
+        &:hover {
+            background: #fa7589;
+            transition: background 0.2s ease-in-out;
+        }
+    }
+}
+
+.active-toggle {
+    left: 0 !important;
+}

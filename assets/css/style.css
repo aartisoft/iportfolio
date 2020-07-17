@@ -170,14 +170,12 @@ a:hover {
 
 .main {
   margin-left: 300px;
-  z-index: -9999;
 }
 
 .main .hero {
   background: linear-gradient(rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.6)), url(../img/hero-bg.jpg);
   background-size: cover;
   background-position: top right;
-  background-attachment: fixed;
   background-repeat: no-repeat;
   height: 100vh;
   width: 100%;
@@ -593,8 +591,8 @@ a:hover {
   left: 0;
   width: 300px;
   background-color: #040B14;
-  transition: left 0.5s;
-  padding: 0 15px;
+  transition: all 0.5s;
+  padding: 10px 15px;
   z-index: 9999;
 }
 
